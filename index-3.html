@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b35">
+<title>Apna Hotel PK | ہوٹل بکنگ</title>
+<style>
+:root{--green:#123b35;--green2:#1f6658;--gold:#e9b85b;--ink:#182522;--muted:#64736e;--bg:#f5f7f5;--line:#e3e9e5}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Nastaliq Urdu","Noto Sans Arabic",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#0e302b,#1e6657);color:white;padding:18px 5vw 54px}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:23px;font-weight:800}.logo small{display:block;font-size:12px;font-weight:400;opacity:.8}
+nav a{color:white;text-decoration:none;border:1px solid #ffffff55;padding:9px 14px;border-radius:999px;font-size:14px}
+.hero{max-width:1100px;margin:40px auto 0}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.35;margin:0 0 12px}.hero p{font-size:17px;max-width:650px;line-height:1.9;color:#e0ece7;margin:0 0 22px}
+.pills{display:flex;gap:9px;flex-wrap:wrap}.pills span{background:#ffffff18;border:1px solid #ffffff3b;border-radius:99px;padding:8px 13px;font-size:14px}
+main{max-width:1100px;margin:-25px auto 50px;padding:0 18px}.search{background:white;border-radius:18px;padding:18px;box-shadow:0 12px 35px #123b3518;display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}select,input,textarea{font:inherit;width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;background:white;color:var(--ink);outline-color:var(--green2)}
+button,.btn{border:0;background:var(--green2);color:white;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+section{margin-top:34px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:15px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.hotel{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}.photo{height:155px;background:linear-gradient(135deg,#dce8e2,#a9c4b8);display:grid;place-items:center;color:#44645a;font-size:42px}.hotel-body{padding:15px}.hotel h3{margin:0 0 7px;font-size:19px}.meta{color:var(--muted);font-size:13px;line-height:1.8}.price{font-size:20px;font-weight:800;color:var(--green);margin:12px 0}.price small{font-size:12px;font-weight:400;color:var(--muted)}.hotel-actions{display:flex;gap:8px}.hotel-actions a{flex:1;font-size:14px;padding:10px 8px}.outline{background:white;color:var(--green2);border:1px solid var(--green2)}
+.empty{background:white;border:1px dashed #b8c9c0;border-radius:16px;padding:28px;text-align:center;color:var(--muted);line-height:1.9}
+.admin{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}.admin summary{font-weight:800;cursor:pointer;font-size:19px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.full{grid-column:1/-1}.hint{font-size:12px;color:var(--muted);line-height:1.7}.footer{background:#102e29;color:#dce9e4;padding:25px 18px;text-align:center;line-height:1.9}.footer a{color:#f3cb7d}
+@media(max-width:700px){.search{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.hero{margin-top:28px}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+<nav><div class="logo">Apna Hotel PK<small>آسان ہوٹل بکنگ — اسلام آباد، راولپنڈی اور فیض آباد</small></div><a href="#hotels">ہوٹل دیکھیں</a></nav>
+<div class="hero">
+<h1>اپنے سفر کے لیے مناسب ہوٹل تلاش کریں</h1>
+<p>فیض آباد بس اڈے، اسلام آباد اور راولپنڈی کے ہوٹلوں کی معلومات حاصل کریں۔ اپنی پسند کا ہوٹل منتخب کریں اور WhatsApp پر بکنگ کی درخواست بھیجیں۔</p>
+<div class="pills"><span>📍 فیض آباد</span><span>🏙️ اسلام آباد</span><span>🏨 راولپنڈی</span></div>
+</div>
+</header>
+<main>
+<div class="search">
+<div><label for="area">علاقہ منتخب کریں</label><select id="area"><option value="all">تمام علاقے</option><option>فیض آباد</option><option>اسلام آباد</option><option>راولپنڈی</option></select></div>
+<div><label for="guests">مہمانوں کی تعداد</label><select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 یا زیادہ</option></select></div>
+<button onclick="filterHotels()">ہوٹل تلاش کریں</button>
+</div>
+<section id="hotels">
+<div class="section-head"><div><h2>دستیاب ہوٹل</h2><p>ہوٹلوں کی تفصیلات اور کرایہ یہاں دکھائی دیں گے۔</p></div></div>
+<div id="hotelGrid" class="grid"></div>
+</section>
+<section>
+<details class="admin">
+<summary>＋ اپنا ہوٹل شامل کریں (صرف ویب سائٹ منتظم کے لیے)</summary>
+<p class="hint">یہ ابتدائی نمونہ ہے۔ یہاں شامل کیے گئے ہوٹل اسی براؤزر میں محفوظ ہوں گے۔ عوامی ویب سائٹ پر مستقل ڈیٹا کے لیے بعد میں آن لائن ڈیٹابیس/ایڈمن لاگ اِن درکار ہوگا۔</p>
+<form id="hotelForm" class="formgrid">
+<div><label>ہوٹل کا نام</label><input name="name" required placeholder="مثلاً اپنا ہوٹل"></div>
+<div><label>علاقہ</label><select name="area"><option>فیض آباد</option><option>اسلام آباد</option><option>راولپنڈی</option></select></div>
+<div><label>فی رات کرایہ (روپے)</label><input name="price" type="number" min="1" required placeholder="مثلاً 3500"></div>
+<div><label>رابطہ نمبر (اختیاری)</label><input name="phone" placeholder="03XXXXXXXXX"></div>
+<div class="full"><label>پتہ / قریبی جگہ</label><input name="address" required placeholder="ہوٹل کا مکمل پتہ"></div>
+<div class="full"><label>تفصیل (اختیاری)</label><textarea name="details" rows="2" placeholder="کمرے، سہولیات وغیرہ"></textarea></div>
+<div class="full"><button type="submit">ہوٹل محفوظ کریں</button></div>
+</form>
+</details>
+</section>
+</main>
+<footer class="footer">Apna Hotel PK<br>بکنگ کی درخواست اور معلومات کے لیے WhatsApp کریں:<br><a id="footerWa" href="#" target="_blank" rel="noopener">WhatsApp پر رابطہ کریں</a><br><span class="hint">نوٹ: بکنگ ہوٹل کی دستیابی اور آپ کی تصدیق کے بعد ہی حتمی ہوگی۔</span></footer>
+<script>
+const WA='923165069100';
+const key='apnaHotelPkListings';
+let hotels=[];
+try{hotels=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){hotels=[]}
+function waLink(message){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(message)}
+document.getElementById('footerWa').href=waLink('السلام علیکم، مجھے ہوٹل بکنگ کے بارے میں معلومات چاہیے۔');
+function render(list=hotels){
+ const grid=document.getElementById('hotelGrid');
+ if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">ابھی ہوٹل شامل نہیں کیے گئے۔<br>ہوٹلوں کی معلومات ملنے پر آپ یہاں خود شامل کر سکتے ہیں۔</div>';return}
+ grid.innerHTML=list.map((h,i)=>`<article class="hotel"><div class="photo">🏨</div><div class="hotel-body"><h3>${esc(h.name)}</h3><div class="meta">📍 ${esc(h.area)} — ${esc(h.address)}<br>${esc(h.details||'مزید معلومات کے لیے WhatsApp پر رابطہ کریں')}</div><div class="price">Rs. ${Number(h.price).toLocaleString('en-PK')} <small>/ فی رات</small></div><div class="hotel-actions"><a class="btn" target="_blank" rel="noopener" href="${waLink('السلام علیکم، مجھے '+h.name+' ('+h.area+') میں کمرہ بک کرنا ہے۔ براہِ کرم دستیابی اور کرایہ کنفرم کریں۔')}">Book Now</a><a class="btn outline" target="_blank" rel="noopener" href="${waLink('السلام علیکم، '+h.name+' کے بارے میں مزید معلومات چاہیے۔')}">تفصیل</a></div></div></article>`).join('');
+}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function filterHotels(){const a=document.getElementById('area').value;render(a==='all'?hotels:hotels.filter(h=>h.area===a))}
+document.getElementById('hotelForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);hotels.push(Object.fromEntries(f.entries()));localStorage.setItem(key,JSON.stringify(hotels));e.target.reset();filterHotels();alert('ہوٹل اس براؤزر میں محفوظ ہوگیا۔')});
+render();
+</script>
+</body>
+</html>
